@@ -13,9 +13,19 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
 
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-62341726-1');
+  </script>
+
+
+  <style>
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -85,7 +95,6 @@
 
     .backgroundContainer {
       background-color: #263645;
-    	background-image: url('http://bootscootin2pdx.com/network.svg'), radial-gradient(200px 500px at center, #ff8300 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
     	background-size: 125%, 50% 100%;
       background-position: 0 60%, 0 100%;
       animation: move 5s linear infinite;
@@ -206,7 +215,7 @@
       <h3>Links</h3><br>
       <div class="row">
         <div class="col-sm-3">
-          <a class="btn btn-info buttonPointer greyButton" href="resources/Dailton Rabelo 2016 resume.pdf" download>My resume</a>
+          <a class="btn btn-info buttonPointer greyButton" href="resources/Dailton Rabelo Resume.pdf" download>My resume</a>
         </div>
         <div class="col-sm-3">
           <button type="button" class="btn btn-secondary buttonPointer greyButton" onclick="window.open('https://github.com/drabelo/')">Github</button>
@@ -252,27 +261,36 @@
   </div>
 </body>
 <script>
-  $('#exampleModal').on('show.bs.modal', function(event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var item = button.data('item') // Extract info from data-* attributes
-      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-      var modal = $(this)
-      switch (item)
-      {
-        case "tmbb":
-          modal.find('.modal-description').text("This app was written for Android to display analytics between two people texting. It shows the ratio of sent and received messages to that person.");
-          $('#portfolioImage').attr('src', 'resources/textmebackFullscreen.png');
-          break;
-        case "hubbur":
-          modal.find('.modal-description').text("This was an application that I wrote to keep track of events in school. You enter your intrests and it would keep you informed about events in that category. There was also a social media aspect to it.");
-          $('#portfolioImage').attr('src', 'resources/hubburFullscreen.png');
-          break;
-        case "workout":
-          modal.find('.modal-description').text("This is an application that I wrote using Ionic. It is a hybric technology, so this application can run on Android, iOS, and web. It helped me track my workouts, and see the progression.");
-          $('#portfolioImage').attr('src', 'resources/workoutFullscreen.png');
-          break
-      }
-    });
+$("#exampleModal").on("show.bs.modal", function(event) {
+  var button = $(event.relatedTarget);
+  var item = button.data("item");
+  var modal = $(this);
+  switch (item) {
+    case "tmbb":
+      modal
+        .find(".modal-description")
+        .text(
+          "This app was written for Android to display analytics between two people texting. It shows the ratio of sent and received messages to that person."
+        );
+      $("#portfolioImage").attr("src", "resources/textmebackFullscreen.png");
+      break;
+    case "hubbur":
+      modal
+        .find(".modal-description")
+        .text(
+          "This was an application that I wrote to keep track of events in school. You enter your intrests and it would keep you informed about events in that category. There was also a social media aspect to it."
+        );
+      $("#portfolioImage").attr("src", "resources/hubburFullscreen.png");
+      break;
+    case "workout":
+      modal
+        .find(".modal-description")
+        .text(
+          "This is an application that I wrote using Ionic. It is a hybric technology, so this application can run on Android, iOS, and web. It helped me track my workouts, and see the progression."
+        );
+      $("#portfolioImage").attr("src", "resources/workoutFullscreen.png");
+      break;
+  }
+});
 </script>
 </html>
